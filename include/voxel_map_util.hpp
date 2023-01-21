@@ -809,7 +809,7 @@ void BuildResidualListOMP(const unordered_map<VOXEL_LOC, OctoTree *> &voxel_map,
     useful_ptpl[i] = false;
   }
 #ifdef MP_EN
-  omp_set_num_threads(MP_PROC_NUM);
+  omp_set_num_threads(atoi(MP_PROC_NUM));
 #pragma omp parallel for
 #endif
   for (int i = 0; i < index.size(); i++) {
